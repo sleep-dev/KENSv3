@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Solution binary for your architecture is needed for building KENS. Currently, we support Cygwin 64bit, Linux 64bit, and Mac OS 64bit.</p>
 <h2>Running KENSv3</h2>
 <p>In build directory, testTCP binary will be created after building KENS. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./testTCP # run all tests</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;./testTCP --getst_filter=&quot;TestEnv_Reliable.TestOpen&quot; # run specific test</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;./testTCP --gtest_filter=&quot;TestEnv_Reliable.TestOpen&quot; # run specific test</div>
 </div><!-- fragment --><p> See Google Test documentation for further usage.</p>
 <p>We provide commands for partial tests. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;#cd KENSv3</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;make test_part1</div>
@@ -128,8 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Defining symbol RUN_SOLUTION will build testTCP in solution only mode. You have to clean and rebuild the whole project. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;#cd KENSv3</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;export EXTRA_CXXFLAGS=&quot;-DRUN_SOLUTION&quot;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;make all</div>
-</div><!-- fragment --><p>#How to do KENSv3 project?</p>
-<h2>Template source</h2>
+</div><!-- fragment --><p>#How to do KENSv3 project? </p><h2>Template source</h2>
 <p>In TestTCP folder, there are one source file and one header file. You are allowed to modify TCPAssignment.cpp and <a class="el" href="_t_c_p_assignment_8hpp_source.html">TCPAssignment.hpp</a>. Also, you can add member fields to "class TCPAssignment". Any source files in TestTCP folder are automatically included in the build path.</p>
 <h2>What you have to do?</h2>
 <ol type="1">
@@ -140,12 +139,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>Flow control You may block read/write calls if you have no data from TCP window or you TCP window is full. Handle with read/write and generate/process proper TCP packets for data transmission. Until here is test_part3.</li>
 <li>Recovery You have to handle with losses, reorders, and packet corruption.</li>
-<li>Congestion control Implement AIMD congestion control mechanism for test_part4. You can observe convergence graph from pcap logs. If you did not implement congestion control algorithm, you may not pass test_part4. There would be retransmission storms and applications may not finish in time. Until here is test_part4. </li>
+<li>Congestion control Implement AIMD congestion control mechanism for test_part4. You can observe convergence graph from pcap logs. If you did not implement congestion control algorithm, you may not pass test_part4. There would be retransmission storms and applications may not finish in time. Until here is test_part4.</li>
 </ol>
+<h2>How to contribute?</h2>
+<p>This is an automatically generated source repository from our internal repository. If you want to contribute to KENSv3 framework, please send us your patches, your Github ID, and your email address. These informations are used to add you to our contributor list. You can send it via Github issues or <a href="#" onclick="location.href='mai'+'lto:'+'ken'+'s-'+'dev'+'@a'+'n.k'+'ai'+'st.'+'ac'+'.kr'; return false;">kens-<span style="display: none;">.nosp@m.</span>dev@<span style="display: none;">.nosp@m.</span>an.ka<span style="display: none;">.nosp@m.</span>ist.<span style="display: none;">.nosp@m.</span>ac.kr</a>.</p>
+<h2>Requests to students</h2>
+<p>KENSv3 is an open-source framework. However, it is also an educational framework. We couldn't get our position between them. We are asking your favor not to make a public fork, but a private clone for your project. Github provides free educational plan for students (<a href="https://education.github.com/">https://education.github.com/</a>). Please do not upload your solutions online, so that other students can do this project themselves later.</p>
+<h2>Requests to instructors</h2>
+<p>You may modify it freely to customize this project with your courses. Not only the source contribution, we also receive material contribution. If you have better presentation slides or other teaching material, you can contribute with them. Please let your students not to upload their solutions online. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 5 2015 03:15:30 for KENSv3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 7 2015 11:44:32 for KENSv3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
